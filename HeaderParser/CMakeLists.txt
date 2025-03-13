@@ -8,7 +8,9 @@ find_package(Boost 1.72.0 COMPONENTS filesystem)
 include_directories(${Boost_INCLUDE_DIRS})
 
 include_directories(/usr/local/include)
+include_directories(/usr/local/opt/llvm/include)
 link_directories(/usr/local/lib)
+link_directories(/usr/local/opt/llvm/lib)
 link_libraries(clang Boost::filesystem)
 
 add_executable(headerparse declparse.cpp)
