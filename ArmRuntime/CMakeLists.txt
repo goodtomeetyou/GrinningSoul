@@ -4,9 +4,9 @@ project(ArmRuntime)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-set(CMAKE_OSX_SYSROOT "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk")
-set(CMAKE_CXX_FLAGS "-Wno-deprecated-declarations -mios-simulator-version-min=10.0")
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.0" CACHE STRING "Non-empty for iOS" FORCE)
+set(CMAKE_OSX_SYSROOT "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk")
+set(CMAKE_CXX_FLAGS "-Wno-deprecated-declarations -miphoneos-version-min=14.0")
+set(CMAKE_OSX_DEPLOYMENT_TARGET "14.0" CACHE STRING "Non-empty for iOS" FORCE)
 set(CMAKE_OSX_ARCHITECTURES "arm64")
 link_libraries("-framework Foundation" "-framework CoreFoundation")
 
