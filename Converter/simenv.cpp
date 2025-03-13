@@ -29,5 +29,5 @@ SimEnv::SimEnv() {
     auto path = exec("xcodebuild -version -sdk iphonesimulator Path");
     boost::algorithm::trim(path);
     SdkPath = strdup(path.c_str());
-    RuntimeRoot = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot";
+    RuntimeRoot = "/Library/Developer/CoreSimulator/Volumes/your_ios_volume_name/Library/Developer/CoreSimulator/Profiles/Runtimes/your_ios_version.simruntime/Contents/Resources/RuntimeRoot";
 }
