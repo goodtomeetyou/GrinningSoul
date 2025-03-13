@@ -73,7 +73,7 @@ Follow the instructions below to build required binaries and convert an iOS app 
     ```bash
     ./convertOne.sh /path/to/MyDecryptedApp.app
     ```
-4. Locate the converted app bundle on the directory `convertedapps` within `GrinningSoul` project folder.
+4. Locate the converted app bundle on the directory `convertedApps` within `GrinningSoul` project folder.
 5.  Run the converted application within the iOS Simulator.  Open a iPhone device on the Simulator and drag the app bundle to SpringBoard.
 
 **TROUBLESHOOTING**
