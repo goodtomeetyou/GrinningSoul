@@ -70,7 +70,7 @@ Follow the instructions below to build required binaries/libraries and convert a
 
 None of them will open in the simulator. The reasons? So many things changed that will need to be implemented. You can track the logs at Console Mac app.
 
-**CURRENT STATUS**
+## Current Status
 As I mentioned above the project was abandonated. The developer uploaded the repo without any instruction, commit, or documentation to see the status the project was left. Debbuging the project and tracking the changes and old X posts of the original developer I could get the information provided in this README, I also I am researching the code and its high level functions in order to make some properly documentation that will be published here soon, I am gathering most information that could be useful as soon as possible.
 
 Offline I made some fixes and updated some things, but they require more tests and time in order to commit them here.
