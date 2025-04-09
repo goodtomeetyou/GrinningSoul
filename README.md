@@ -67,7 +67,8 @@ Follow the instructions below to build required binaries/libraries and convert a
 5.  Run the converted application within the iOS Simulator.  Open a iPhone device on the Simulator and drag and drop the app bundle to SpringBoard.
 
 **WHAT TO EXPECT AFTER AN APP CONVERTION?**
-**NONE OF THE CONVERTED APPS WILL RUN IN THE SIMULATOR**. The reasons? So many things changed that will need to be implemented. You can track the logs at Console Mac app.
+
+None of them will open in the simulator. The reasons? So many things changed that will need to be implemented. You can track the logs at Console Mac app.
 
 **CURRENT STATUS**
 As I mentioned above the project was abandonated. The developer uploaded the repo without any instruction, commit, or documentation to see the status the project was left. Debbuging the project and tracking the changes and old X posts of the original developer I could get the information provided in this README, I also I am researching the code and its high level functions in order to make some properly documentation that will be published here soon, I am gathering most information that could be useful as soon as possible.
