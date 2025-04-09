@@ -1,0 +1,3 @@
+[submodule "vendor-fork"]
+	path = vendor-fork
+	url = git@github.com:goodtomeetyou/libmoonage.git
