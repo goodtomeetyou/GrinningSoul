@@ -2,18 +2,16 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/goodtomeetyou/GrinningSoul/blob/master/LICENSE.txt)
 
-This is a fork of [GrinningSoul](https://github.com/daeken/grinningsoul).
-
 GrinningSoul is a set of high-low level code that provides a translation layer for arm64 <-> x86-64 CPU architectures within the iOS-simulator shipped with XCode. This enables iOS App Store decrypted applications to run in the Simulator (Intel-based Macs). The project relies on the LLVM infrastructure to perform highly efficient code translation, compilation, and library support.
 
-Not all iOS features are available due Simulator limitations. Feautures that relies on physical hardware could tend to crash the applications due to unimplemented or non-existent features.
+Not all iOS features are available due architecture bridging and Simulator limitations. Feautures that relies on physical hardware, complex instructions could tend to crash the applications due to unimplemented or non-existent features.
 
 The original project was abandoned after Apple announced their CPU transition from Intel to Apple Silicon on Mac devices. The goal of this fork is to refactor the code to support modern APIs, libraries, and SDKs. I also want to refactor the code structure to be usable in other architecture bridging projects, as well as convert this project to a user-friendly Mac App so you can convert Applications easily without complications. I will try to maintain the project until Apple stops shipping newer macOS versions on Intel Macs.
 
 **CURRENT MILESTONES**
 
 *   Built all needed binaries/libraries
-    *   Built sucessfully libemuruntime.dylib using Moonage nor Unicorn.
+    *   Built sucessfully libemuruntime.dylib using Moonage or Unicorn.
     *   Built libarmruntime.dylib using the latest iOS SDK.
 *   Partial function database generator update.
     *   Still need to rewrite HeaderParse/generatefuncdb since is not dumping anything on the funcdb file on latest macOS/iOS-simulator versions.
@@ -24,7 +22,7 @@ The original project was abandoned after Apple announced their CPU transition fr
 Follow the instructions below to build required binaries/libraries and convert an iOS app bundle.
 
 **PREREQUISITES**
-*   Decrypted iOS arm64 app bundle (**MAKE SURE YOUR APPLICATION IS TARGETING AT LEAST IOS 13 SINCE NEW DYLD FORMAT IS NOT IMPLEMENTED YET, IOS 14+ APPS ARE NOT SUPPORTED**)
+*   Decrypted iOS arm64 app bundle (**MAKE SURE YOUR APPLICATION IS TARGETING AT LEAST IOS 13 SINCE NEW DYLD INFO FORMAT IS NOT IMPLEMENTED YET, IOS 14+ APPS ARE NOT SUPPORTED**)
 *   Intel Mac with macOS 11 (Big Sur) up to macOS 15 (Sequoia)
 *   Xcode with the latest iOS SDK (recomended for test iOS 18.2)
 *   CMake and Make via Homebrew
@@ -46,7 +44,7 @@ Follow the instructions below to build required binaries/libraries and convert a
     cd build
     cmake ..
     ```
-    *   **Important:** Check the CMakeLists and adjust it if you got LLVM finding errors.
+    *   **Important:** Check the CMakeLists and adjust it for your own LLVM paths. I encourage to build each executable one by one instead the global CMakeLists.txt.
 
 4.  **Build GrinningSoul:**
     ```bash
@@ -57,27 +55,26 @@ Follow the instructions below to build required binaries/libraries and convert a
 
 **USAGE**
 
-1.  Get a desired iOS application (IPA) file.
-2.  Extract the decrypted application bundle (.app directory) from the IPA file.
-3.  Use the `convertOne` bash script to convert and prepare the application.  For example:
+1.  Get a desired descrypted iOS application bundle (.app) file.
+2.  Use the `convertOne` bash script to convert and prepare the application.  For example:
     ```bash
     ./convertOne.sh /path/to/MyDecryptedApp.app
     ```
-4. Locate the converted app bundle on the directory `convertedApps` within `GrinningSoul` project folder.
-5.  Run the converted application within the iOS Simulator.  Open a iPhone device on the Simulator and drag and drop the app bundle to SpringBoard.
+3. Locate the converted app bundle on the directory `convertedApps` within `GrinningSoul` project folder.
+4.  Run the converted application within the iOS Simulator.  Open a iPhone device on the Simulator and drag and drop the app bundle to SpringBoard.
 
 **WHAT TO EXPECT AFTER AN APP CONVERTION?**
 
 None of them will open in the simulator. The reasons? So many things changed that will need to be implemented. You can track the logs at Console Mac app.
 
 ## Current Status
-As I mentioned above the project was abandonated. The developer uploaded the repo without any instruction, commit, or documentation to see the status the project was left. Debbuging the project and tracking the changes and old X posts of the original developer I could get the information provided in this README, I also I am researching the code and its high level functions in order to make some properly documentation that will be published here soon, I am gathering most information that could be useful as soon as possible.
+As I mentioned above the project was abandonated. The developer uploaded the repo without any instruction, commit, or documentation to see the status the project was left. Debbuging the project, tracking the changes and analyzing old X (Twitter) posts of the original developer I was able to get the information provided in this README, I also am researching the code and it's high level functions in order to make some properly documentation that will be published here soon, I am gathering most information that could be useful as soon as possible.
 
-Offline I made some fixes and updated some things, but they require more tests and time in order to commit them here.
+I made some fixes and updated some things offline, however they require more tests and time in order to commit them here.
 
 **CONTRIBUTING**
 
-I highly welcome contributions to this project! If you feel interested to work here or check the project you can see the issues I oppened to analyze the things needed to implement to get this work. Feel free to open new issues or make any comment.
+I highly welcome contributions to this project! If you feel interested to work here give it a try to check the project. You can see the issues I oppened to analyze the things needed to implement to get this work. Feel free to open new issues or make needed comments.
 
 ## License
 
